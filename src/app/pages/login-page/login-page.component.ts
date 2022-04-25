@@ -1,44 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import {
+  FormBuilder,
   FormControl,
-  FormGroupDirective,
-  NgForm,
+  FormGroup,
   Validators,
 } from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(
-    control: FormControl | null,
-    form: FormGroupDirective | NgForm | null
-  ): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(
-      control &&
-      control.invalid &&
-      (control.dirty || control.touched || isSubmitted)
-    );
-  }
-}
+import { filter, Subject, take, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginPageComponent implements OnInit {
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
+  public profileForm!: FormGroup;
+  public loginValid = true;
 
-  passwordFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
+  public initializeForm(): FormGroup {
+    this.profileForm = this.formBuilder.group({
+      username: new FormControl('', [
+        Validators.required,
+        Validators.email,
+        Validators.minLength(6),
+        Validators.pattern(/^([^ ]+@[^ ]+\.[a-z]{2,6}|)$/),
+      ]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.maxLength(16),
+      ]),
+    });
+    return this.profileForm;
+  }
 
-  matcher = new MyErrorStateMatcher();
-  constructor() {}
+  constructor(private formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {}
+  public ngOnInit(): void {
+    this.initializeForm();
+  }
+
+  public onSubmit(): void {}
 }
