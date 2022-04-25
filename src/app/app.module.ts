@@ -10,9 +10,6 @@ import { AppMaterialModule } from './appMaterial.module';
 
 import { NgChartsModule } from 'ng2-charts';
 
-import { LoginPageModule } from './pages/login-page/login-page.module';
-import { MainPageModule } from './pages/main-page/main-page.module';
-
 import { HeaderModule } from './components/header/header.module';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -35,8 +32,6 @@ registerLocaleData(en);
     HttpClientModule,
     NgChartsModule,
     BrowserAnimationsModule,
-    LoginPageModule,
-    MainPageModule,
     HeaderModule,
   ],
   providers: [],
