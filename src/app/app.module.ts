@@ -5,10 +5,8 @@ import en from '@angular/common/locales/en';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatDividerModule } from '@angular/material/divider';
+
+import { AppMaterialModule } from './appMaterial.module';
 
 import { NgChartsModule } from 'ng2-charts';
 
@@ -24,10 +22,12 @@ registerLocaleData(en);
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    AppMaterialModule,
     RouterModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     NgChartsModule,
