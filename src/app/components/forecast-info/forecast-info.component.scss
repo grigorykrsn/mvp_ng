@@ -1,0 +1,13 @@
+.forecast-info-wrapper {
+  width: 346px;
+  height: 100%;
+
+  .forecast-filters {
+    display: flex;
+    justify-content: space-between;
+
+    mat-form-field {
+      max-width: 163px;
+    }
+  }
+}

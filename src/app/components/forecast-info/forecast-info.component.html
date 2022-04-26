@@ -1,0 +1,19 @@
+<div class="forecast-info-wrapper">
+  <div class="forecast-filters">
+    <mat-form-field appearance="legacy">
+      <mat-select [(value)]="callsAndChatsSelected">
+        <mat-option *ngFor="let item of callsAndChats" [value]="item.value">
+          {{item.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-select [(value)]="periodSelected">
+        <mat-option *ngFor="let item of period" [value]="item.value">
+          {{item.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
