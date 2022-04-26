@@ -4,108 +4,98 @@
   bottom: 0;
   left: 0;
   right: 0;
+  max-width: 1366px;
+  margin: 0 auto;
 
   .main-sidenav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 256px;
-    background-color: white;
-    border-right: 1px solid #EFF1F2;
-
-    nav {
+    .sidenav {
       display: flex;
       flex-direction: column;
-      height: 100%;
+      width: 256px;
+      height: 100vh;
 
       .logo {
+        display: flex;
+        align-items: center;
         width: 100%;
-        height: 58px;
+        height: 62px;
         padding-left: 24px;
-        padding-top: 16px;
-        font-family: 'Roboto';
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 160%;
-        text-transform: uppercase;
-        color: #A3A8B6;
-        border-bottom: 1px solid #EFF1F2;
-        cursor: pointer;
       }
-  
+
       .menu-list {
-        width: 100%;
         height: 100%;
         margin: 0;
         padding: 0;
         list-style: none;
 
         .menu-item {
+          display: flex;
+          align-items: center;
           position: relative;
           height: 44px;
           padding-left: 72px;
-          border-bottom: 1px solid #EFF1F2;
           cursor: pointer;
 
           &::before {
-            content: url(./../../../assets/images/nav-item.svg);
             position: absolute;
-            top: 13px;
+            top: 10px;
             left: 19px;
+          }
+
+          &.chart-item::before {
+            content: url(./../../../assets/images/chart_icon_gray.svg);
+          }
+
+          &.calendar-item::before {
+            content: url(./../../../assets/images/calendar_icon_gray.svg);
+          }
+
+          &.chart-item.active::before {
+            content: url(./../../../assets/images/chart_icon_white.svg);
+          }
+
+          &.calendar-item.active::before {
+            content: url(./../../../assets/images/calendar_icon_white.svg);
           }
 
           .menu-link {
             font-family: 'Roboto';
             font-weight: 400;
-            font-size: 14px;
-            line-height: 44px;      
-            color: #302F3B;
+            font-size: 14px;     
+            color: #989898;
           }
 
           &.active {
             background-color: #61A946;
 
-            &::before {
-              content: url(./../../../assets/images/nav-item-active.svg);
-            }
-
             .menu-link {
-              color: white;
+              font-weight: 500;
+              color: #FFFFFF;
             }
           }
         }
       }
-  
+
       .logout {
+        display: flex;
+        align-items: center;
         position: relative;
-        width: 100%;
-        height: 45px;
-        padding-left: 72px;
-        padding-top: 10px;
+        height: 44px;
+        padding-left: 16px;
         font-family: 'Roboto';
         font-weight: 400;
         font-size: 14px;
-        color: #302F3B;
-        border-top: 1px solid #EFF1F2;
+        color: #989898;
         cursor: pointer;
 
-        &::before {
-          content: url(./../../../assets/images/logout.svg);
-          position: absolute;
-          top: 10px;
-          left: 19px;
+        img {
+          margin-right: 36px;
         }
       }
     }
   }
 
-  mat-sidenav-content {
-    padding: 20px;
-    background-color: #F8F8F8;
-
-    p {
-      margin: 0;
-      margin-bottom: 20px;
-    }
+  .main-sidenav-content {
+    padding: 32px;
   }
 }
