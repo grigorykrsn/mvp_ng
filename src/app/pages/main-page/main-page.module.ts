@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { ForecastBlockModule } from '../../components/forecast-block/forecast-block.module';
 
@@ -16,7 +16,7 @@ import { MainPageRoutingModule } from './main-page-routing.module';
   imports: [
     CommonModule,
     MatSidenavModule,
-    MatButtonModule,
+    MatDividerModule,
     MainPageRoutingModule,
     ForecastBlockModule,
   ],
