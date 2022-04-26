@@ -1,0 +1,111 @@
+.main-sidenav-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .main-sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 256px;
+    background-color: white;
+    border-right: 1px solid #EFF1F2;
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      .logo {
+        width: 100%;
+        height: 58px;
+        padding-left: 24px;
+        padding-top: 16px;
+        font-family: 'Roboto';
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 160%;
+        text-transform: uppercase;
+        color: #A3A8B6;
+        border-bottom: 1px solid #EFF1F2;
+        cursor: pointer;
+      }
+  
+      .menu-list {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        .menu-item {
+          position: relative;
+          height: 44px;
+          padding-left: 72px;
+          border-bottom: 1px solid #EFF1F2;
+          cursor: pointer;
+
+          &::before {
+            content: url(./../../../assets/images/nav-item.svg);
+            position: absolute;
+            top: 13px;
+            left: 19px;
+          }
+
+          .menu-link {
+            font-family: 'Roboto';
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 44px;      
+            color: #302F3B;
+          }
+
+          &.active {
+            background-color: #61A946;
+
+            &::before {
+              content: url(./../../../assets/images/nav-item-active.svg);
+            }
+
+            .menu-link {
+              color: white;
+            }
+          }
+        }
+      }
+  
+      .logout {
+        position: relative;
+        width: 100%;
+        height: 45px;
+        padding-left: 72px;
+        padding-top: 10px;
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 14px;
+        color: #302F3B;
+        border-top: 1px solid #EFF1F2;
+        cursor: pointer;
+
+        &::before {
+          content: url(./../../../assets/images/logout.svg);
+          position: absolute;
+          top: 10px;
+          left: 19px;
+        }
+      }
+    }
+  }
+
+  mat-sidenav-content {
+    padding: 20px;
+    background-color: #F8F8F8;
+
+    p {
+      margin: 0;
+      margin-bottom: 20px;
+    }
+  }
+}

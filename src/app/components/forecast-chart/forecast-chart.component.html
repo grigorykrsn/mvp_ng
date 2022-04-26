@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-title>Actions Buttons</mat-card-title>
+  <mat-card-subtitle>Start</mat-card-subtitle>
+  <div style="display: block">
+    <canvas
+      baseChart
+      width="680"
+      height="312"
+      [type]="'line'"
+      [data]="lineChartData"
+      [options]="lineChartOptions"
+      [legend]="lineChartLegend"
+      [plugins]="lineChartPlugins"
+    >
+    </canvas>
+  </div>
+</mat-card>
+<br />
+<mat-card>
+  <mat-card-title>Actions Buttons</mat-card-title>
+  <mat-card-subtitle>End</mat-card-subtitle>
+  <div style="display: flex">
+    <canvas
+      baseChart
+      width="680"
+      height="312"
+      [type]="'line'"
+      [data]="lineChartData"
+      [options]="lineChartOptions"
+      [legend]="lineChartLegend"
+      [plugins]="lineChartPlugins"
+    >
+    </canvas>
+  </div>
+</mat-card>
